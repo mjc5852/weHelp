@@ -14,7 +14,7 @@ h1 {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
 
     font-family: "lato", "sans-serif";
     font-size: 30px;
@@ -27,7 +27,7 @@ h2 {
     width: 400px;
     height: 300px;
     
-    margin: 150px auto;
+    margin: 100px auto;
     padding: 15px 50px 50px;
     
     position: relative;
@@ -36,4 +36,44 @@ h2 {
     border-radius: 5px;
     background-color: rgb(50, 50, 50);
     color: white;
+}
+
+.weHelp-box {
+    width: 500px;
+    height: auto;
+    
+    margin: 100px auto;
+    padding: 15px 50px 50px;
+    
+    position: relative;
+    display: block;
+
+    border-radius: 5px;
+    background-color: rgb(50, 50, 50);
+    color: white;
+    text-decoration: none;
+
+    text-align: left;
+}
+
+input {
+    color: black;
+    background-color: white;
+    height: 30px;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    text-align: center;
+    color: white;
+    transition: color ease 0.3s;
+}
+
+.button:hover {
+    color: rgb(150, 150, 150);
+    transition: color ease 0.3s;
 }
