@@ -1,0 +1,135 @@
+* {
+    font-family: 'Lato', sans-serif;
+    color: white;
+}
+
+body {
+    height: 500px;
+    background: rgb(30, 30, 30);
+}
+
+[class*="icon-"] {
+    font-family: 'form';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+  
+.icon-arrow-right:before {
+    content: "\3e";
+}
+
+div {
+    align-content: center;
+    justify-content: center;
+    margin: 15% auto 0;
+    max-width: 32em;
+    animation: moveDown 0.5s;
+    animation-fill-mode: forwards;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    margin-bottom: 0.8em;
+}
+
+form {
+    margin: 12% auto;
+    width: 19em;
+    text-align: center;
+    position: relative;
+    animation: moveDown .3s;
+    animation-fill-mode: forwards;
+}
+
+input {
+    font-size: 1.5em;
+    outline: none; 
+    box-shadow: none;
+    border-radius: 0;
+    border-top: none;
+    border-left: solid 2px;
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+    background: transparent;
+    display: block;
+    height: 2em;
+    width: 12em;
+    margin-bottom: 5%;
+    padding: 0 3%;
+    position: relative;
+    z-index: 0;
+    
+    transition: border 0.5s;
+
+    color: white;
+    border-color: rgb(125, 125, 125);
+}
+
+input:focus {
+    color: white;
+    border-color: white;
+}
+
+.placeholder {
+    color: rgb(125, 125, 125);
+    font-family: 'Lato', sans-serif;
+}
+
+.placeholder:focus {
+    color: white;
+  }
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 2.05em;
+    padding: 3% 7%;
+    cursor: pointer;
+    position: absolute;
+    right: -6%;
+    bottom: 0%;
+    transition: color 0.5s;
+    color: rgb(125, 125, 125)
+}
+
+button:hover, button:focus {
+    transition: color 0.5s;
+    color: white;
+}
+
+button span {
+    display: none;
+}
+
+a {
+    transform: translateY(-200px);
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+
+.button {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: color ease 0.3s;
+}
+
+.button:hover {
+    color: rgb(150, 150, 150);
+    transition: color ease 0.3s;
+}
+
+@keyframes moveDown {
+    0%      {transform: translate(0,-75%);opacity: 0;}
+    100%    {transform: translate(0,0);opacity: 1;}
+}

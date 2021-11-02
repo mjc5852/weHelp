@@ -5,15 +5,20 @@
         <title>weHelp - Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="form.css">
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     </head>
 
     <body>
-        <div class="weHelp-box">
-            <h1>Login</h1>
-            <h2>email: <input type="text"></input></h2>
-            <h2>password: <input type="text"></input></h2>
-            <a href="home.html"><h2 class="button">login</h2></a>
-        </div>
+        <form action="home.html">
+            <h1>Log In</h1>
+            
+            <span class="input"></span>
+            <input type="text" placeholder="Username/Email Address"></input>
+            <span class="input"></span>
+            <input type="text" placeholder="Password"></input>
+            <button href="home.html" title="Submit form" class="arrow, icon-arrow-right"><span>Login</span></button>
+        </form>
+        <div><a href="idiot.html" class="button">Forgot Password?</a></div>
     </body>
+</html>
