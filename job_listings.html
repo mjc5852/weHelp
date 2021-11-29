@@ -9,17 +9,116 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     </head>
 
+    <script>
+        function fadeInPage() {
+            if (!window.AnimationEvent) {return;}
+            var fader = document.getElementById('fader')
+            fader.classList.add('fadeOut')
+            document.addEventListener('DOMContentLoaded', function() {
+                if (!window.AnimationEvent) {return;}
+                var anchors = document.getElementsByTagName('a');
+                for (var idx=0; idx<anchors.length; idx+=1) {
+                    if (anchors[idx].hostname !== window.location.hostname ||
+                        anchors[idx].hostname === window.location.pathname) {
+                        continue;
+                    }
+                    anchors[idx].addEventListener('click', function(event) {
+                        var fader = document.getElementById('fader'),
+                            anchor = event.currentTarget;
+            
+                        var listener = function() {
+                            window.location = anchor.href;
+                            fader.removeEventListener('animationend', listener);
+                    };
+                    fader.addEventListener('animationend', listener);
+                    event.preventDefault();
+                    fader.classList.add('fadeIn');
+                    });
+                }
+            });
+        }
+    </script>
+
     <body>
-        <div class="container">
-            <h1>Job Listings</h1>
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
-            <div>6</div>
-            <div>7</div>
-            <div>8</div>
-            <div>9</div>
+        <svg id="fader"></svg>
+        <script>fadeInPage();</script>
+        <h1>Job Listings</h1>
+        <div class="center">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Yardwork<br>
+                        <span class="subtext">Description:</span>
+                            Mow the lawn<br>
+                        <span class="subtext">Listed by:</span>
+                            Michael Camerato<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★★★☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Dog Walking<br>
+                        <span class="subtext">Description:</span>
+                            Take a dog on a walk (30 to 60 minutes)<br>
+                        <span class="subtext">Listed by:</span>
+                            Justin F.<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★★★★</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Clean Shed<br>
+                        <span class="subtext">Description:</span>
+                            Help clean out an old shed<br>
+                        <span class="subtext">Listed by:</span>
+                            Michael Camerato<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★☆☆☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Moving In<br>
+                        <span class="subtext">Description:</span>
+                            Help carry boxes in and out of house<br>
+                        <span class="subtext">Listed by:</span>
+                            Samantha M.<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★☆☆☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Pet-Sitting<br>
+                        <span class="subtext">Description:</span>
+                            watch a dog and cat while owner is away<br>
+                        <span class="subtext">Listed by:</span>
+                            John P.<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★★☆☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Job Title:</span>
+                            Clean Car<br>
+                        <span class="subtext">Description:</span>
+                            Handwash a car (hose and supplies provided)<br>
+                        <span class="subtext">Listed by:</span>
+                            Ethan B.<br>
+                        <span class="subtext">Lister's Rating:</span><br>
+                        <span class="stars">★★★★☆</span>
+                    </p>
+                </div>
+                    </p>
+                </div>
+            </div>
         </div>
     </body>
