@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>weHelp - Settings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    </head>
+
+    <script>
+        function fadeInPage() {
+            if (!window.AnimationEvent) {return;}
+            var fader = document.getElementById('fader')
+            fader.classList.add('fadeOut')
+            document.addEventListener('DOMContentLoaded', function() {
+                if (!window.AnimationEvent) {return;}
+                var anchors = document.getElementsByTagName('a');
+                for (var idx=0; idx<anchors.length; idx+=1) {
+                    if (anchors[idx].hostname !== window.location.hostname ||
+                        anchors[idx].hostname === window.location.pathname) {
+                        continue;
+                    }
+                    anchors[idx].addEventListener('click', function(event) {
+                        var fader = document.getElementById('fader'),
+                            anchor = event.currentTarget;
+            
+                        var listener = function() {
+                            window.location = anchor.href;
+                            fader.removeEventListener('animationend', listener);
+                    };
+                    fader.addEventListener('animationend', listener);
+                    event.preventDefault();
+                    fader.classList.add('fadeIn');
+                    });
+                }
+            });
+        }
+    </script>
+
+    <body>
+        <svg id="fader"></svg>
+        <script>fadeInPage();</script>
+        <a href="home.html" class="goBack" style="font-size: 20px;">🡰</a>
+        <div class="settings-box">
+            <h2 class="main">Settings</h2>
+            <p>location range: <input type="text"></p>
+        </div>
+    </body>
+</html>

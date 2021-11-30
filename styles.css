@@ -49,6 +49,12 @@ h2 {
     line-height: 30px;
 }
 
+h2.main {
+    text-align:center;
+    text-shadow:rgb(10, 10, 10) 0 0 10px;
+    font-size: 35px;
+}
+
 h3 {
     text-align: left;
 
@@ -215,6 +221,46 @@ a {
 
     border: solid 3px rgb(15, 15, 15);
     background: rgb(50, 50, 50);
+}
+
+.settings-box {
+    margin: auto;
+    padding: 15px 50px 50px;
+    width: 750px;
+    height: 600px;
+    margin-top: 25px;
+
+    border: solid 3px rgb(15, 15, 15);
+    border-radius: 10px;
+    background: rgb(50, 50, 50);
+}
+
+input {
+    width: 65px;
+    height: auto;
+    
+    font-size: 20px;
+    
+    outline: none; 
+    box-shadow: none;
+    border-radius: 0;
+    border-top: solid 2px;
+    border-left: solid 2px;
+    border-right: solid 2px;
+    border-bottom: solid 2px;
+    background: transparent;
+
+    padding: 5px;
+    
+    transition: border 0.5s;
+
+    color: white;
+    border-color: rgb(125, 125, 125);
+}
+
+input:focus {
+    color: white;
+    border-color: white;
 }
 
 /* ~ fadeIn and fadeOut animation keyframes ~ */
