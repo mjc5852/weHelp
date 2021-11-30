@@ -7,7 +7,7 @@
     z-index: 999999;
     pointer-events: none;
     background: rgb(30, 30, 30);
-    animation: fadeOut 300ms ease-in-out;
+    animation: fadeOut 200ms ease-in-out;
 }
 
 #fader.fadeOut {
@@ -137,6 +137,32 @@ a {
 .button:hover {
     color: rgb(150, 150, 150);
     transition: color ease 0.3s;
+    cursor: pointer;
+}
+
+.goBack {
+    width:75px;
+    height:75px;
+    position:absolute;
+    top:25px;
+    left:25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(50, 50, 50);
+    
+    border: 3px solid rgb(10, 10, 10);
+    border-radius: 10px;
+    
+    box-shadow: none;
+    transition: box-shadow ease 300ms;
+}
+
+.goBack:hover {
+    transition: box-shadow ease 300ms;
+    box-shadow: rgb(150, 150, 150) 0 0 5px;
 }
 
 .center {

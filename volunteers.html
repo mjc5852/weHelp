@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>weHelp - Volunteers</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    </head>
+
+    <script>
+        function fadeInPage() {
+            if (!window.AnimationEvent) {return;}
+            var fader = document.getElementById('fader')
+            fader.classList.add('fadeOut')
+            document.addEventListener('DOMContentLoaded', function() {
+                if (!window.AnimationEvent) {return;}
+                var anchors = document.getElementsByTagName('a');
+                for (var idx=0; idx<anchors.length; idx+=1) {
+                    if (anchors[idx].hostname !== window.location.hostname ||
+                        anchors[idx].hostname === window.location.pathname) {
+                        continue;
+                    }
+                    anchors[idx].addEventListener('click', function(event) {
+                        var fader = document.getElementById('fader'),
+                            anchor = event.currentTarget;
+            
+                        var listener = function() {
+                            window.location = anchor.href;
+                            fader.removeEventListener('animationend', listener);
+                    };
+                    fader.addEventListener('animationend', listener);
+                    event.preventDefault();
+                    fader.classList.add('fadeIn');
+                    });
+                }
+            });
+        }
+    </script>
+
+    <body>
+        <svg id="fader"></svg>
+        <script>fadeInPage();</script>
+        
+        <a href="home.html" class="goBack" style="font-size: 20px;">🡰</a>
+
+        <h1>Volunteers Near You</h1>
+        <div class="center">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Aiden G.<br>
+                        <span class="subtext">Age:</span>
+                            18<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            n/a<br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★★★★</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Jacob S.<br>
+                        <span class="subtext">Age:</span>
+                            22<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            n/a<br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★★★☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Roger W.<br>
+                        <span class="subtext">Age:</span>
+                            33<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            n/a<br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★★★☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Louis C.<br>
+                        <span class="subtext">Age:</span>
+                            57<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            <span style="color: rgb(255, 217, 145);">*Immunocompromised</span><br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★★★☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Oliver M.<br>
+                        <span class="subtext">Age:</span>
+                            25<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            n/a<br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★★☆☆</span>
+                    </p>
+                </div>
+                <div class="grid-item">
+                    <p style="font-size: 18px; line-height: 35px;">
+                        <span class="subtext">Name:</span>
+                            Wayde J.<br>
+                        <span class="subtext">Age:</span>
+                            19<br>
+                        <span class="subtext">Additional Information:</span><br>
+                            n/a<br>
+                        <span class="subtext">Volunteer's Rating:</span><br>
+                        <span class="stars">★★☆☆☆</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
